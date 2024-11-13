@@ -2,7 +2,7 @@
 
 Este é um projeto de boilerplate em React utilizando Vite para desenvolvimento rápido, **Sass** para o gerenciamento de estilos e **React Router** para navegação. Todas as rotas da aplicação são centralizadas no arquivo `src/routes/routes.jsx`, facilitando a manutenção e adição de novas rotas.
 
-## Installation
+## Instalação
 
 ### Pré-requisitos
 
@@ -176,6 +176,35 @@ export const ExampleComponent = () => {
 - `className`: Adiciona classes CSS extras ao contêiner `Stack`.
 - `children`: Elementos filhos renderizados dentro do contêiner.
 
+## Uso do Componente ButtonLink
+
+O componente `ButtonLink` é um botão personalizável que pode ser renderizado como botão ou link, com classes CSS extras opcionais.
+
+### Exemplo de Uso
+
+```jsx
+import { Stack, ButtonLink } from "./shared/components";
+
+export const ExampleComponent = () => {
+  return (
+    <Stack elementType="section" className="custom-class">
+      <ButtonLink className="custom-class">Botão Padrão</ButtonLink>
+      <ButtonLink to="/about" className="custom-class">
+        Link para About
+      </ButtonLink>
+    </Stack>
+  );
+};
+```
+
+### Props do Componente
+
+- `to`: O destino do link (opcional se for tipo botão).
+- `type`: Define o tipo do elemento (padrão é "button").
+- `className`: Classes CSS extras para personalização.
+- `children`: Conteúdo do botão/link.
+- `props`: Outras propriedades adicionais para o botão/link.
+
 ## Estrutura Modular de Estilos
 
 Este projeto utiliza **CSS Modules** com Sass. Para adicionar estilos:
@@ -205,42 +234,46 @@ export const Home = () => {
 Abaixo está a estrutura do projeto:
 
     .
-    ├── pnpm-lock.yaml
-    ├── .gitignore
-    ├── package.json
-    ├── src/
-    │    ├── shared/
-    │    │    ├── components/
-    │    │    │    ├── index.js
-    │    │    │    └── Stack/
-    │    │    │        └── index.jsx
-    │    │    └── screens
-    │    │         ├── NotFound/
-    │    │         │    ├── index.jsx
-    │    │         │    └── NotFound.module.scss
-    │    │         ├── About/
-    │    │         │    ├── About.module.scss
-    │    │         │    └── index.jsx
-    │    │         └── Home/
-    │    │              ├── Home.module.scss
-    │    │              └── index.jsx
-    │    ├── App.jsx
-    │    ├── routes/
-    │    │    └── routes.jsx
-    │    ├── assets/
-    │    │    ├── react.svg
-    │    │    └── styles/
-    │    │         └── main.scss
-    │    ├── App.css
-    │    ├── index.css
-    │    └── main.jsx
-    ├── eslint.config.js
-    ├── public/
-    │    └── vite.svg
-    ├── LICENSE
-    ├── vite.config.js
-    ├── README.md
-    └── index.html
+    ╠══ pnpm-lock.yaml
+    ╠══ LICENSE
+    ╠══ vite.config.js
+    ╠══ .gitignore
+    ╠══ eslint.config.js
+    ╠══ package.json
+    ╠══ src/
+    ║    ╠══ index.css
+    ║    ╠══ routes/
+    ║    ║    ╚══ routes.jsx
+    ║    ╠══ main.jsx
+    ║    ╠══ App.css
+    ║    ╠══ assets/
+    ║    ║    ╠══ react.svg
+    ║    ║    ╚══ styles
+    ║    ║         ╚══ main.scss
+    ║    ╠══ App.jsx
+    ║    ╚══ shared
+    ║         ╠══ screens/
+    ║         ║    ╠══ NotFound/
+    ║         ║    ║    ╠══ index.jsx
+    ║         ║    ║    ╚══ NotFound.module.scss
+    ║         ║    ╠══ About/
+    ║         ║    ║    ╠══ About.module.scss
+    ║         ║    ║    ╚══ index.jsx
+    ║         ║    ╠══ index.js
+    ║         ║    ╚══ Home
+    ║         ║         ╠══ Home.module.scss
+    ║         ║         ╚══ index.jsx
+    ║         ╚══ components
+    ║              ╠══ ButtonLink/
+    ║              ║    ╠══ ButtonLink.module.scss
+    ║              ║    ╚══ index.jsx
+    ║              ╠══ index.js
+    ║              ╚══ Stack
+    ║                   ╚══ index.jsx
+    ╠══ README.md
+    ╠══ public/
+    ║    ╚══ vite.svg
+    ╚══ index.html
 
 ## Exportações de Componentes e Telas
 
@@ -250,6 +283,7 @@ Para facilitar as importações, cada pasta contém um arquivo `index.js` que ex
 
 ```js
 // TODO: Export all components from this file
+export * from "./ButtonLink";
 export * from "./Stack";
 ```
 
