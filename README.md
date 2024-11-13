@@ -104,7 +104,7 @@ pnpm dev
 ```
 
 Executa o app no modo de desenvolvimento.
-Abra <http://localhost:3000> para visualizá-lo no navegador.
+Abra <http://localhost:5173/> para visualizá-lo no navegador.
 
 ### Build Project
 
