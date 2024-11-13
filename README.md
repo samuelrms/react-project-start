@@ -299,3 +299,7 @@ export * from "./NotFound";
 ## Licença
 
 Este projeto está sob a licença MIT.
+
+## Dê uma Estrela ⭐
+
+Se você chegou até o final, considere dar uma estrela no repositório para apoiar o projeto!
